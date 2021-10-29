@@ -1,14 +1,13 @@
 // import { Login } from "../../components/Login";
 // import { HomeContainer } from "./style";
 
+import { ContainerLogin } from "./style";
+
 const LoginPage = () => {
   return (
     <>
-      <div>Login</div>
+      <ContainerLogin>oi</ContainerLogin>
     </>
-    // <HomeContainer>
-    //   <Login />
-    // </HomeContainer>
   );
 };
 

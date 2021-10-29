@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
   font-size: 100%;
   text-decoration: none;
   line-height: 1;
+  font-family: var(--main-font);
 }
     
     :root {
@@ -21,30 +22,37 @@ const GlobalStyles = createGlobalStyle`
         --gray-scale-0: #f5f5f5;
 
 
-        --font-primary: #313131;
-        --font-primary-light: #656565;
-        --font-secondary: #FFFFFF;
-        --alert-error: #FF5555; 
-        --alert-succes: #81FF64;
-        --bg-with-transp: rgba(0, 0, 0, 0.61);
+        --feedback-palette-negative: #e60000;
+        --feedback-palette-warning: #ffcd07;
+        --feedback-palette-success: #168821;
+        --feedback-palette-information: #155bcb;
 
-        --font-type-standart: Courier;
-        --font-type-cursive: 'Sail';
-        --font-type-details: 'Saira';
-        --font-type-body: 'Raleway';
-        --font-type-formal: 'PT Serif';
+        --main-font:'Inter', sans-serif;
 
-        --font-size-xsmall: 0.8rem;
-        --font-size-small: 1rem;
-        --font-size-standart: 1.2rem;
-        --font-size-medium: 1.7rem;
-        --font-size-large: 2.3rem;
-        --font-size-xlarge: 3rem;
+        --font-size-heading1: 26px;
+        --font-size-heading2: 22px;
+        --font-size-heading3: 18px;
+        --font-size-headline: 16px;
+        --font-size-body: 14px;
+        --font-size-body-600: 14px;
+        --font-size-caption: 12px;
 
-        --font-w-xthin: 200;
-        --font-w-thin: 300;
-        --font-w-normal: 400;
-        --font-w-bold: 600;
+        --font-w-regular: 400;
+        --font-w-semibold: 600;
+        --font-w-bold: 700;
+
+        --button-default-width: 130px;
+        --button-default-height: 60px;
+        --button-default-borderradius: 8px;
+
+        --button-medium-width: 130px;
+        --button-medium-height: 40px;
+        --button-medium-borderradius: 8px;
+
+        --input-mobile-width: 340px;
+        --input-mobile-height: 60px;
+        --input-mobile-borderradius: 8px;
+
     }
 `;
 
