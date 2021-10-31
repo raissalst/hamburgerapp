@@ -107,6 +107,8 @@ export const ContainerRegister = styled.div`
     border-radius: var(--input-mobile-borderradius);
     border: none;
 
+    cursor: pointer;
+
     @media screen and (min-width: 1024px) {
       width: var(--input-desktop-width);
     }
@@ -130,6 +132,8 @@ export const TitleContainer = styled.div`
     text-align: left;
     font-size: 35px;
     margin: 53px 0px 30px 0px;
+
+    color: var(--gray-scale-600);
 
     @media screen and (min-width: 1024px) {
       margin-left: 33px;

@@ -1,6 +1,7 @@
 // import { Login } from "../../components/Login";
 // import { HomeContainer } from "./style";
 import shoppingbag from "../../assets/shopping-bag.png";
+import { useHistory } from "react-router";
 
 import {
   ContainerLogin,
@@ -8,15 +9,23 @@ import {
   MessageCard,
   TitleContainer,
 } from "./style";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
+  const history = useHistory();
+
+  const sendTo = (path: string) => {
+    history.push(path);
+  };
   return (
     <>
       <MainContainerLoginPage>
         <TitleContainer>
-          <h1>
-            Burguer <span>Kenzie</span>
-          </h1>
+          <Link to="/">
+            <h1>
+              Burguer <span>Kenzie</span>
+            </h1>
+          </Link>
           <MessageCard>
             <div>
               <img src={shoppingbag} alt="bag" />
@@ -35,7 +44,9 @@ const LoginPage = () => {
           <p>
             Crie sua conta para saborear muitas delícias e matar a sua fome!
           </p>
-          <button className="cadastrar">Cadastrar</button>
+          <button className="cadastrar" onClick={() => sendTo("/register")}>
+            Cadastrar
+          </button>
         </ContainerLogin>
       </MainContainerLoginPage>
     </>

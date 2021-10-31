@@ -8,15 +8,18 @@ import {
   MessageCard,
   TitleContainer,
 } from "./style";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   return (
     <>
       <MainContainerRegisterPage>
         <TitleContainer>
-          <h1>
-            Burguer <span>Kenzie</span>
-          </h1>
+          <Link to="/">
+            <h1>
+              Burguer <span>Kenzie</span>
+            </h1>
+          </Link>
           <MessageCard>
             <div>
               <img src={shoppingbag} alt="bag" />
@@ -29,7 +32,10 @@ const RegisterPage = () => {
         </TitleContainer>
         <ContainerRegister>
           <h3>Cadastro</h3>
-          <p>Retornar para o login</p>
+          <Link className="linkToLogin" to="/login">
+            <p>Retornar para o login</p>
+          </Link>
+
           <input placeholder="Nome" />
           <input placeholder="Email" />
           <input placeholder="Senha" />

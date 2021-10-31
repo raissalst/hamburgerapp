@@ -1,17 +1,27 @@
 // import { Login } from "../../components/Login";
 // import { HomeContainer } from "./style";
 
+import { Card } from "../../components/Card";
 import { NavBar } from "../../components/NavBar";
+import { ListContainerHome, MainContainerHome } from "./style";
 
 const HomePage = () => {
   return (
     <>
       <NavBar />
-      <div>Home</div>
+      <MainContainerHome>
+        <ListContainerHome>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ListContainerHome>
+      </MainContainerHome>
     </>
-    // <HomeContainer>
-    //   <Login />
-    // </HomeContainer>
   );
 };
 

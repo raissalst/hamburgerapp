@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
   font-family: var(--main-font);
   
 }
-body {background-color: var(--gray-scale-0);}
+body {background-color: #fff;}
     
     :root {
         --color-primary: #27AE60;
@@ -21,7 +21,7 @@ body {background-color: var(--gray-scale-0);}
         --gray-scale-600: #333333;
         --gray-scale-300: #828282;
         --gray-scale-100: #e0e0e0;
-        --gray-scale-0: #f5f5f5; 
+        --gray-scale-0: #f5f5f5;
 
 
         --feedback-palette-negative: #e60000;

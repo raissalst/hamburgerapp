@@ -88,6 +88,8 @@ export const ContainerLogin = styled.div`
     border-radius: var(--input-mobile-borderradius);
     border: none;
 
+    cursor: pointer;
+
     @media screen and (min-width: 1024px) {
       width: var(--input-desktop-width);
     }
@@ -135,6 +137,8 @@ export const TitleContainer = styled.div`
 
   h1 {
     margin: 53px 0px 30px 0px;
+
+    color: var(--gray-scale-600);
 
     text-align: left;
     font-size: 35px;
