@@ -134,9 +134,11 @@ export const TitleContainer = styled.div`
   /* background-color: pink; */
 
   h1 {
+    margin: 53px 0px 30px 0px;
+
     text-align: left;
     font-size: 35px;
-    margin: 53px 0px 30px 0px;
+    font-weight: var(--font-w-bold);
 
     @media screen and (min-width: 1024px) {
       margin-left: 33px;
