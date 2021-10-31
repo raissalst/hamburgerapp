@@ -36,22 +36,8 @@ export const ItemLiContainer = styled.li`
 
   img {
     height: 150px;
-    width: 150px;
-    /* border: 1px solid red; */
-
-    /* 
-    position: absolute;
-    bottom: 111px;
-    left: 20px;
-
-    width: 260px;
-    height: 20px;
-
-    color: var(--gray-scale-300);
-
-    font-size: 12px;
-    font-weight: var(--font-w-regular);
-    line-height: 20px; */
+    width: 170px;
+    object-fit: cover;
   }
 
   h3 {

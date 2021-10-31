@@ -13,8 +13,13 @@ import { ItemLiContainer } from "./style";
 // import { GiClick, GiLovers, GiPartyPopper } from "react-icons/gi";
 // import { FaGraduationCap } from "react-icons/fa";
 import hamburger from "../../assets/hamburger.png";
+import { MenuItemFormat } from "../../interfaces/interfaces";
 
-export const Card = () => {
+interface CardProps {
+  item: MenuItemFormat;
+}
+
+export const Card = ({ item }: CardProps) => {
   //   const { image_url, name, first_brewed, description, volume } = beer;
   //   const [open, setOpen] = useState(false);
   //   const [radioValue, setRadioValue] = useState("");
@@ -53,14 +58,16 @@ export const Card = () => {
 
   //   const classes = useStyles();
 
+  const { name, section, price, img } = item;
+
   return (
     <ItemLiContainer>
       <div>
-        <img src={hamburger} alt="hamburger" />
+        <img src={img} alt={name} />
       </div>
-      <h3>Hamburguer</h3>
-      <h5>Sanduiches</h5>
-      <p>R$ 14.00</p>
+      <h3>{name}</h3>
+      <h5>{section}</h5>
+      <p>R$ {price.toFixed(2)}</p>
 
       <button>Adicionar</button>
     </ItemLiContainer>
