@@ -5,7 +5,7 @@ export const MainContainerLoginPage = styled.div`
   flex-wrap: wrap;
 
   width: 414px;
-  height: 621px;
+  height: 690px;
   margin: 0 auto;
 
   /* border: 1px solid blue; */
@@ -126,15 +126,75 @@ export const ContainerLogin = styled.div`
 
 export const TitleContainer = styled.div`
   width: 380px;
-  height: 160px;
+  height: 227px;
   margin: 0 auto;
 
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   /* background-color: pink; */
+
+  h1 {
+    text-align: left;
+    font-size: 35px;
+    margin: 53px 0px 30px 0px;
+
+    @media screen and (min-width: 1024px) {
+      margin-left: 33px;
+    }
+
+    span {
+      font-size: 27px;
+      color: var(--color-secondary);
+    }
+  }
 
   @media screen and (min-width: 1024px) {
     width: 439px;
-    height: 461px;
-    /* margin: 100px auto 0px; */
+    height: 300px;
+    margin: 20px auto 0px;
+  }
+`;
+
+export const MessageCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 379px;
+  height: 95px;
+
+  background-color: #fff;
+  border: 1px solid var(--gray-scale-100);
+  border-radius: 5px;
+  box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 0.25);
+
+  div {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: rgba(39, 174, 96, 0.1);
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 30px;
+      top: 18px;
+      transform: translate(-50%);
+    }
+  }
+
+  p {
+    width: 261px;
+    height: 64px;
+    line-height: 21px;
+    /* padding-top: 5px; */
+    text-align: left;
+    font-size: 14px;
+    color: var(--gray-scale-300);
+
+    span {
+      color: var(--gray-scale-600);
+      font-weight: var(--font-w-semibold);
+    }
   }
 `;
