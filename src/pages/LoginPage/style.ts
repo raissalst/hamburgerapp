@@ -10,6 +10,7 @@ export const MainContainerLoginPage = styled.div`
 
   /* border: 1px solid blue; */
   background-color: #ffffff;
+  border-radius: 5px;
 
   @media screen and (min-width: 1024px) {
     flex-direction: row-reverse;
@@ -37,7 +38,7 @@ export const ContainerLogin = styled.div`
     color: var(--gray-scale-600);
 
     font-size: var(--font-size-heading3);
-    font-weight: bold;
+    font-weight: var(--font-w-bold);
 
     @media screen and (min-width: 1024px) {
       margin: 21px 424px 24px 14px;

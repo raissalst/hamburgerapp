@@ -23,7 +23,7 @@ const LoginPage = () => {
             </div>
             <p>
               A vida é como um sanduíche, é preciso recheá-la com os{" "}
-              <span>melhores</span> igredientes.
+              <span>melhores</span> ingredientes.
             </p>
           </MessageCard>
         </TitleContainer>
