@@ -8,6 +8,7 @@ import { CardModal } from "../CardModal";
 // import { CartContext } from "../../providers/cart";
 import { useState } from "react";
 import { useAuth } from "../../providers/auth";
+import { useCart } from "../../providers/cart";
 
 const useStyles = makeStyles(() => ({
   appbar: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "25px",
     color: "var(--gray-scale-300)",
     lineHeight: "1",
-    height: "25px",
+    height: "60px",
     position: "fixed",
     right: "45px",
 
@@ -95,7 +96,10 @@ export const NavBar = () => {
   //   let totalCartGather = cartGatherFiltered.reduce(
   //     (acc, item) => acc + item.quantity,
   //     0
-  //   );
+  //   )
+
+  const { cart } = useCart();
+
   return (
     <>
       <AppBar className={classes.appbar} position="fixed">
@@ -113,9 +117,14 @@ export const NavBar = () => {
             className={classes.itemcart}
             onClick={handleClickOpenDescrip}
           >
-            {/* <Badge badgeContent={totalCart} color="secondary"> */}
-            <FaShoppingCart />
-            {/* </Badge> */}
+            <Badge
+              badgeContent={
+                cart && cart.reduce((acc, item) => acc + item.quantity, 0)
+              }
+              color="secondary"
+            >
+              <FaShoppingCart />
+            </Badge>
           </MenuItem>
           <MenuItem
             className={classes.itemlogout}

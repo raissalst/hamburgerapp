@@ -5,9 +5,13 @@ export const CardModalContainer = styled.div`
 
   width: 375px;
   min-height: 212px;
+  max-height: 500px;
   margin: 80px auto;
 
   border-radius: 5px;
+
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 
   @media screen and (min-width: 1024px) {
     width: 500px;
@@ -186,6 +190,8 @@ export const CardItemChosen = styled.div`
       right: 8px;
 
       color: var(--gray-scale-300);
+
+      cursor: pointer;
     }
     .quantityContainer {
       position: absolute;

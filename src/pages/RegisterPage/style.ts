@@ -20,7 +20,7 @@ export const MainContainerRegisterPage = styled.div`
   }
 `;
 
-export const ContainerRegister = styled.div`
+export const ContainerRegister = styled.form`
   position: relative;
 
   width: 380px;
