@@ -23,9 +23,9 @@ export const ItemLiContainer = styled.li`
     }
   }
 
-  @media screen and (min-width: 425px) {
+  /* @media screen and (min-width: 425px) {
     margin: 0 20px 50px;
-  }
+  } */
 
   div {
     width: 100%;

@@ -1,10 +1,12 @@
-import { AppBar, Toolbar, MenuItem, Badge } from "@material-ui/core";
+import { AppBar, Toolbar, MenuItem, Badge, Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { useHistory } from "react-router";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdLogout, MdLogin } from "react-icons/md";
+import { CardModal } from "../CardModal";
 // import { useContext } from "react";
 // import { CartContext } from "../../providers/cart";
+import { useState } from "react";
 
 const useStyles = makeStyles(() => ({
   appbar: {
@@ -65,6 +67,16 @@ export const NavBar = () => {
   const sendTo = (path: string) => {
     history.push(path);
   };
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpenDescrip = () => {
+    setOpen(true);
+  };
+
+  const handleClickCloseDescrip = () => {
+    setOpen(false);
+  };
   //   let totalCart = "";
   //   if (cartFiltered) {
   //     totalCart = cartFiltered.reduce((acc, item) => acc + item.quantity, 0);
@@ -90,7 +102,10 @@ export const NavBar = () => {
           >
             <MdLogin />
           </MenuItem>
-          <MenuItem className={classes.itemcart} onClick={() => sendTo("/")}>
+          <MenuItem
+            className={classes.itemcart}
+            onClick={handleClickOpenDescrip}
+          >
             {/* <Badge badgeContent={totalCart} color="secondary"> */}
             <FaShoppingCart />
             {/* </Badge> */}
@@ -100,6 +115,9 @@ export const NavBar = () => {
           </MenuItem>
         </Toolbar>
       </AppBar>
+      <Modal open={open} onClose={handleClickCloseDescrip}>
+        <CardModal />
+      </Modal>
       <Toolbar />
     </>
   );
