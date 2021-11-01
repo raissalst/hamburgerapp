@@ -10,13 +10,36 @@ import {
   TitleContainer,
 } from "./style";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../providers/auth";
+import { UserLoginFormat } from "../../interfaces/interfaces";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const LoginPage = () => {
+  const formSchema = yup.object().shape({
+    email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
+    password: yup.string().required("Campo obrigatório"),
+  });
+
   const history = useHistory();
+
+  const { signIn } = useAuth();
 
   const sendTo = (path: string) => {
     history.push(path);
   };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UserLoginFormat>({ resolver: yupResolver(formSchema) });
+
+  const handleSubmitLogin = (data: UserLoginFormat) => {
+    signIn(data, history);
+  };
+
   return (
     <>
       <MainContainerLoginPage>
@@ -36,11 +59,19 @@ const LoginPage = () => {
             </p>
           </MessageCard>
         </TitleContainer>
-        <ContainerLogin>
+        <ContainerLogin onSubmit={handleSubmit(handleSubmitLogin)}>
           <h3>Login</h3>
-          <input placeholder="Nome" />
-          <input placeholder="Senha" />
-          <button className="logar">Logar</button>
+          <input placeholder="Email" {...register("email")} />
+          {errors.email?.message}
+          <input
+            placeholder="Senha"
+            type="password"
+            {...register("password")}
+          />
+          {errors.password?.message}
+          <button type="submit" className="logar">
+            Logar
+          </button>
           <p>
             Crie sua conta para saborear muitas delícias e matar a sua fome!
           </p>

@@ -4,3 +4,8 @@ export interface MenuItemFormat {
   price: number;
   img: string;
 }
+
+export interface UserLoginFormat {
+  email: string;
+  password: string;
+}

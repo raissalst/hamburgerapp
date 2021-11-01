@@ -7,6 +7,7 @@ import { CardModal } from "../CardModal";
 // import { useContext } from "react";
 // import { CartContext } from "../../providers/cart";
 import { useState } from "react";
+import { useAuth } from "../../providers/auth";
 
 const useStyles = makeStyles(() => ({
   appbar: {
@@ -77,6 +78,12 @@ export const NavBar = () => {
   const handleClickCloseDescrip = () => {
     setOpen(false);
   };
+
+  const { Logout } = useAuth();
+
+  const handleSubmitLogin = () => {
+    Logout(history);
+  };
   //   let totalCart = "";
   //   if (cartFiltered) {
   //     totalCart = cartFiltered.reduce((acc, item) => acc + item.quantity, 0);
@@ -110,7 +117,10 @@ export const NavBar = () => {
             <FaShoppingCart />
             {/* </Badge> */}
           </MenuItem>
-          <MenuItem className={classes.itemlogout} onClick={() => sendTo("/")}>
+          <MenuItem
+            className={classes.itemlogout}
+            onClick={() => handleSubmitLogin()}
+          >
             <MdLogout />
           </MenuItem>
         </Toolbar>

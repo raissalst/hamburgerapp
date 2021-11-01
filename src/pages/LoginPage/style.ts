@@ -20,7 +20,7 @@ export const MainContainerLoginPage = styled.div`
   }
 `;
 
-export const ContainerLogin = styled.div`
+export const ContainerLogin = styled.form`
   width: 380px;
   height: 461px;
   margin: 0 auto;
