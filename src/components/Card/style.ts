@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 export const ItemLiContainer = styled.li`
+  position: relative;
+
   width: 300px;
   height: 346px;
-  /* width: 25%; */
-  text-align: center;
   margin: 0 auto 50px;
-  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
-  /* padding: 10px 10px 20px; */
-  /* max-height: 550px;
-  min-width: 235px; */
+
+  text-align: center;
   font-size: 22px;
-  position: relative;
+
   border: 2px solid var(--gray-scale-100);
   border-radius: 5px;
 
@@ -23,10 +21,6 @@ export const ItemLiContainer = styled.li`
     }
   }
 
-  /* @media screen and (min-width: 425px) {
-    margin: 0 20px 50px;
-  } */
-
   div {
     width: 100%;
     height: 150px;
@@ -35,8 +29,9 @@ export const ItemLiContainer = styled.li`
   }
 
   img {
-    height: 150px;
     width: 170px;
+    height: 150px;
+
     object-fit: cover;
   }
 
@@ -105,53 +100,5 @@ export const ItemLiContainer = styled.li`
     font-weight: var(--font-w-semibold);
 
     cursor: pointer;
-
-    /* :hover {
-      background-color: var(--color-primary);
-    } */
   }
-
-  /*  
-
-  .beerDescription {
-    font-size: 16px;
-    cursor: pointer;
-    border: 2px solid #0000007d;
-    line-height: 1;
-    padding: 2px 0;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(255, 152, 0, 0.8);
-  }
-
-  .counterContainer {
-    margin: 0 auto;
-    direction: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    height: 25px;
-    /* border: 1px solid red; */
-  /* line-height: 1;
-  }
-
-  .counterContainer button {
-    padding: 0;
-    border-radius: 100%;
-    background-color: #ccc;
-    color: #000;
-    min-width: 25px;
-    min-height: 25px;
-    max-height: 25px;
-    max-width: 25px;
-    margin: 0;
-  }
-
-  .counterContainer p {
-    display: inline;
-    padding: 0px 20px;
-    height: 25px;
-  } */
 `;

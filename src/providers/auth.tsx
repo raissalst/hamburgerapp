@@ -22,7 +22,6 @@ const AuthContext = createContext<AuthProviderData>({} as AuthProviderData);
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const history = useHistory();
 
-  // Dessa forma adicionamos ao state o token caso ele exista no localStorage
   const [authToken, setAuthToken] = useState(
     () => localStorage.getItem("token") || ""
   );
@@ -36,20 +35,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       "Usuário não encontrado. Confira seus dados e tente novamente."
     );
   };
-  // Função para logar na aplicação, recebe os dados pegos do form de login
+
   const signIn = (userData: UserLoginFormat, history: any) => {
     axios
       .post("https://apihamburgueria-raissalst.herokuapp.com/login", userData)
       .then((response) => {
-        // setamos no localStorage o token, caso tenhamos a resposta esperada
         localStorage.setItem("token", response.data.accessToken);
         localStorage.setItem("userId", response.data.user.id);
-        // setamos no state o token, caso tenhamos a resposta esperada
+
         setAuthToken(response.data.accessToken);
         setUserId(response.data.user.id);
-        // redirecionamos para a página logado
+
         history.push("/");
-        // <Redirect to="/dashboard" />;
       })
       .catch((err) => errorUserNotFound());
   };
@@ -67,12 +64,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   // Função para deslogar da aplicação
   const Logout = (history: any) => {
-    // limpando o localStorage
     localStorage.clear();
-    // limpando o state
+
     setAuthToken("");
     setUserId("");
-    // redirecionando para login
+
     history.push("/login");
     notifyLogout();
   };

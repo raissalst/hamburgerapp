@@ -131,7 +131,6 @@ export const CardItemChosen = styled.div`
   margin: 20px auto;
 
   background-color: #fff;
-  /* border: 1px solid red; */
 
   @media screen and (min-width: 1024px) {
     width: 450px;
@@ -206,9 +205,7 @@ export const CardItemChosen = styled.div`
 
       width: 110px;
       height: 35px;
-      /* margin: 0 auto; */
 
-      /* border: 1px solid red; */
       line-height: 1;
     }
 

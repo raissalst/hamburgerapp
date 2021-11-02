@@ -5,15 +5,11 @@ import {
   GreenTopBar,
   TotalCartInfo,
 } from "./style";
-// import { Link } from "react-router-dom";
-// import hamburger from "../../assets/hamburger.png";
 import { FaTrash } from "react-icons/fa";
 import { useCart } from "../../providers/cart";
 import shoppingbag from "../../assets/shopping-bag.png";
 
 export const CardModal = () => {
-  //   const { name, section, price, img } = item;
-
   const {
     cart,
     handleQuantitiesItemInCart,
@@ -31,9 +27,8 @@ export const CardModal = () => {
         {cart.length === 0 && (
           <>
             <h4>Sua sacola está vazia</h4>
-            {/* <Link to="/"> */}
+
             <h6>Adicione itens</h6>
-            {/* </Link>{" "} */}
           </>
         )}
 

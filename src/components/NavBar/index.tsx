@@ -4,8 +4,6 @@ import { useHistory } from "react-router";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdLogout, MdLogin } from "react-icons/md";
 import { CardModal } from "../CardModal";
-// import { useContext } from "react";
-// import { CartContext } from "../../providers/cart";
 import { useState } from "react";
 import { useAuth } from "../../providers/auth";
 import { useCart } from "../../providers/cart";
@@ -60,8 +58,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 export const NavBar = () => {
-  //   const { cartFiltered, cartWedFiltered, cartGatherFiltered } =
-  // useContext(CartContext);
   const classes = useStyles();
 
   const history = useHistory();
@@ -85,18 +81,6 @@ export const NavBar = () => {
   const handleSubmitLogin = () => {
     Logout(history);
   };
-  //   let totalCart = "";
-  //   if (cartFiltered) {
-  //     totalCart = cartFiltered.reduce((acc, item) => acc + item.quantity, 0);
-  //   }
-  //   let totalCartWed = cartWedFiltered.reduce(
-  //     (acc, item) => acc + item.quantity,
-  //     0
-  //   );
-  //   let totalCartGather = cartGatherFiltered.reduce(
-  //     (acc, item) => acc + item.quantity,
-  //     0
-  //   )
 
   const { cart } = useCart();
 

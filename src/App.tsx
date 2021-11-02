@@ -26,10 +26,6 @@ function App() {
               fontWeight: "bold",
             },
           },
-          // id: "1",
-          // style: {
-          //   backgroundColor: "var(--feedback-palette-warning)",
-          // },
         }}
       />
     </div>

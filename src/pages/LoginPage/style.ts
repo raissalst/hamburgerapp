@@ -8,13 +8,12 @@ export const MainContainerLoginPage = styled.div`
   height: 690px;
   margin: 0 auto;
 
-  /* border: 1px solid blue; */
   background-color: #ffffff;
   border-radius: 5px;
 
   @media screen and (min-width: 1024px) {
     flex-direction: row-reverse;
-    width: 943px; //939
+    width: 943px;
     height: 461px;
     margin: 100px auto 0px;
   }
@@ -24,9 +23,6 @@ export const ContainerLogin = styled.form`
   width: 380px;
   height: 461px;
   margin: 0 auto;
-
-  /* border: 1px solid red; */
-  /* background-color: pink; */
 
   border-radius: 5px;
   box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
@@ -46,15 +42,14 @@ export const ContainerLogin = styled.form`
   }
 
   input {
-    height: var(--input-mobile-height);
     width: var(--input-mobile-width);
+    height: var(--input-mobile-height);
     margin-bottom: 25px;
     padding: 15px 20px;
 
     border-radius: var(--input-mobile-borderradius);
-    /* border-color: var(--gray-scale-600); */
     border: none;
-    /* border-color: red; */
+
     /* outline: red; */
 
     background-color: var(--gray-scale-0);
@@ -123,7 +118,6 @@ export const ContainerLogin = styled.form`
   @media screen and (min-width: 1024px) {
     width: 500px;
     height: 461px;
-    /* margin: 100px auto 0px; */
   }
 `;
 
@@ -131,9 +125,6 @@ export const TitleContainer = styled.div`
   width: 380px;
   height: 227px;
   margin: 0 auto;
-
-  /* border: 1px solid purple; */
-  /* background-color: pink; */
 
   h1 {
     margin: 53px 0px 30px 0px;
@@ -193,11 +184,12 @@ export const MessageCard = styled.div`
   p {
     width: 261px;
     height: 64px;
+
+    color: var(--gray-scale-300);
+
     line-height: 21px;
-    /* padding-top: 5px; */
     text-align: left;
     font-size: 14px;
-    color: var(--gray-scale-300);
 
     span {
       color: var(--gray-scale-600);

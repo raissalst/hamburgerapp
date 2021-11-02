@@ -1,5 +1,3 @@
-// import { Login } from "../../components/Login";
-// import { HomeContainer } from "./style";
 import shoppingbag from "../../assets/shopping-bag.png";
 import { useHistory } from "react-router";
 

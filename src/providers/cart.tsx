@@ -1,10 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-// import { useHistory } from "react-router-dom";
 import axios from "axios";
-// import jwt_decode from "jwt-decode";
 import { useAuth } from "./auth";
 import { GetCartFormat, MenuItemFormat } from "../interfaces/interfaces";
-// import { AddToCartFormat } from "../interfaces/interfaces";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 

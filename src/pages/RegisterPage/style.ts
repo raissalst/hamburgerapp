@@ -8,7 +8,6 @@ export const MainContainerRegisterPage = styled.div`
   height: 756px;
   margin: 0 auto;
 
-  /* border: 1px solid blue; */
   background-color: #ffffff;
   border-radius: 5px;
 
@@ -27,16 +26,12 @@ export const ContainerRegister = styled.form`
   height: 527px;
   margin: 0 auto;
 
-  /* border: 1px solid red; */
-  /* background-color: pink; */
-
   border-radius: 5px;
   box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
 
   @media screen and (min-width: 1024px) {
     width: 500px;
     height: 461px;
-    /* margin: 100px auto 0px; */
   }
 
   h3 {
@@ -72,9 +67,8 @@ export const ContainerRegister = styled.form`
     padding: 15px 20px;
 
     border-radius: var(--input-mobile-borderradius);
-    /* border-color: var(--gray-scale-600); */
     border: none;
-    /* border-color: red; */
+
     /* outline: red; */
 
     background-color: var(--gray-scale-0);
@@ -124,9 +118,6 @@ export const TitleContainer = styled.div`
   width: 380px;
   height: 227px;
   margin: 0 auto;
-
-  /* border: 1px solid purple; */
-  /* background-color: pink; */
 
   h1 {
     text-align: left;
@@ -185,7 +176,7 @@ export const MessageCard = styled.div`
     width: 261px;
     height: 64px;
     line-height: 21px;
-    /* padding-top: 5px; */
+
     text-align: left;
     font-size: 14px;
     color: var(--gray-scale-300);
