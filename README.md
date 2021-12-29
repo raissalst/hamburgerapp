@@ -1,5 +1,5 @@
 <h1 align="center">
-  Hamburger APP
+  :hamburger: Hamburger APP
 </h1>
 
 <p align = "center">
