@@ -2,7 +2,6 @@ import { createContext, useContext, useState, ReactNode } from "react";
 import axios from "axios";
 import { useAuth } from "./auth";
 import { GetCartFormat, MenuItemFormat } from "../interfaces/interfaces";
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 
 //tipa a props
@@ -21,6 +20,7 @@ interface CartProviderData {
   ) => void;
   deleteItemInCart: (id: number) => void;
   deleteAllItemsInCart: () => void;
+  getItemsInCart: (id: string, token: string) => void;
 }
 
 const CartContext = createContext<CartProviderData>({} as CartProviderData);
@@ -31,19 +31,14 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const { userId, authToken } = useAuth();
   const [cart, setCart] = useState<GetCartFormat[]>([] as GetCartFormat[]);
 
-  //console.log("user id no card", userId);
-  //get cart from user id
-  useEffect(() => {
-    // authToken &&
+  const getItemsInCart = (id: string, token: string) => {
     axios
-      .get(`https://hamburgerapprlst.herokuapp.com/cart?userId=${userId}`, {
-        headers: { Authorization: `Bearer ${authToken}` },
+      .get(`https://hamburgerapprlst.herokuapp.com/cart?userId=${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setCart(response.data))
       .catch((e) => console.log(e));
-  }, [userId, cart]);
-
-  //console.log("cart no provider cart", cart);
+  };
 
   const notifyAlreadyAdded = () =>
     toast(<>Item already in cart! To change item quantity, change in cart!</>, {
@@ -83,6 +78,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         )
         .then((response) => {
           successAddedToCart();
+          getItemsInCart(userId, authToken);
         })
         .catch((e) => errorUnlogged());
     } else {
@@ -118,7 +114,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
           }
         )
         .then((response) => {
-          console.log(response.data);
+          //console.log(response.data);
+          getItemsInCart(userId, authToken);
         })
         .catch((e) => console.log(e.response.data.message));
     }
@@ -131,7 +128,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
+        getItemsInCart(userId, authToken);
       })
       .catch((e) => console.log(e.response.data.message));
   };
@@ -149,6 +147,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         handleQuantitiesItemInCart,
         deleteItemInCart,
         deleteAllItemsInCart,
+        getItemsInCart,
       }}
     >
       {children}
