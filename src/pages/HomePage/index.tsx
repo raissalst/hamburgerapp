@@ -12,7 +12,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(" https://apihamburgueria-raissalst.herokuapp.com/menulist")
+      .get("https://hamburgerapprlst.herokuapp.com/menulist")
       .then((response) => {
         setMenuList([...response.data]);
         // console.log(response);

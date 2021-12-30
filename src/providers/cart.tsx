@@ -36,12 +36,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   useEffect(() => {
     // authToken &&
     axios
-      .get(
-        `https://apihamburgueria-raissalst.herokuapp.com/cart?userId=${userId}`,
-        {
-          headers: { Authorization: `Bearer ${authToken}` },
-        }
-      )
+      .get(`https://hamburgerapprlst.herokuapp.com/cart?userId=${userId}`, {
+        headers: { Authorization: `Bearer ${authToken}` },
+      })
       .then((response) => setCart(response.data))
       .catch((e) => console.log(e));
   }, [userId, cart]);
@@ -79,7 +76,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     if (cart.length === 0 || isItemAlreadyAdded === false) {
       return axios
         .post(
-          `https://apihamburgueria-raissalst.herokuapp.com/cart`,
+          `https://hamburgerapprlst.herokuapp.com/cart`,
           {
             name: name,
             price: price,
@@ -117,7 +114,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     } else {
       return axios
         .patch(
-          `https://apihamburgueria-raissalst.herokuapp.com/cart/${id}`,
+          `https://hamburgerapprlst.herokuapp.com/cart/${id}`,
           {
             quantity: newQuantity,
             userId: userId,
@@ -136,7 +133,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   //deletando 1 item do carrinho
   const deleteItemInCart = (id: number) => {
     axios
-      .delete(`https://apihamburgueria-raissalst.herokuapp.com/cart/${id}`, {
+      .delete(`https://hamburgerapprlst.herokuapp.com/cart/${id}`, {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((response) => {

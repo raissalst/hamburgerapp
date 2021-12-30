@@ -23,7 +23,7 @@ export const RegisterProvider = ({ children }: RegisterProviderProps) => {
   const handleRegister = (userData: UserRegisterFormat, history: any) => {
     const { email, password, name, password_confirm } = userData;
     axios
-      .post("https://apihamburgueria-raissalst.herokuapp.com/register", {
+      .post("https://hamburgerapprlst.herokuapp.com/register", {
         email: email,
         password: password,
         name: name,

@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const signIn = (userData: UserLoginFormat, history: any) => {
     axios
-      .post("https://apihamburgueria-raissalst.herokuapp.com/login", userData)
+      .post("https://hamburgerapprlst.herokuapp.com/login", userData)
       .then((response) => {
         localStorage.setItem("token", response.data.accessToken);
         localStorage.setItem("userId", response.data.user.id);
