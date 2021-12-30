@@ -31,7 +31,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const { userId, authToken } = useAuth();
   const [cart, setCart] = useState<GetCartFormat[]>([] as GetCartFormat[]);
 
-  console.log("user id no card", userId);
+  //console.log("user id no card", userId);
   //get cart from user id
   useEffect(() => {
     // authToken &&
@@ -43,29 +43,23 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       .catch((e) => console.log(e));
   }, [userId, cart]);
 
-  console.log("cart no provider cart", cart);
+  //console.log("cart no provider cart", cart);
 
   const notifyAlreadyAdded = () =>
-    toast(
-      <>
-        Produto já está no carrinho! Para alterar quantidade, altere no
-        carrinho!
-      </>,
-      {
-        icon: "🛑",
-        id: "1",
-        style: {
-          backgroundColor: "var(--feedback-palette-warning)",
-        },
-      }
-    );
+    toast(<>Item already in cart! To change item quantity, change in cart!</>, {
+      icon: "🛑",
+      id: "1",
+      style: {
+        backgroundColor: "var(--feedback-palette-warning)",
+      },
+    });
 
   const errorUnlogged = () => {
-    toast.error("Faça o login para adicionar itens ao carrinho");
+    toast.error("Login to add items to cart");
   };
 
   const successAddedToCart = () => {
-    toast.success("Produto adicionado ao carrinho!");
+    toast.success("Item added to cart!");
   };
 
   //cadastrando no carrinho addToCart

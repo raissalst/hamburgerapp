@@ -16,8 +16,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 const LoginPage = () => {
   const formSchema = yup.object().shape({
-    email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
-    password: yup.string().required("Campo obrigatório"),
+    email: yup.string().required("Required e-mail").email("Invalid e-mail"),
+    password: yup.string().required("Required field"),
   });
 
   const history = useHistory();
@@ -52,8 +52,8 @@ const LoginPage = () => {
               <img src={shoppingbag} alt="bag" />
             </div>
             <p>
-              A vida é como um sanduíche, é preciso recheá-la com os{" "}
-              <span>melhores</span> ingredientes.
+              Life is like a sandwich, it is better to fill it with the{" "}
+              <span>best</span> ingredients.
             </p>
           </MessageCard>
         </TitleContainer>
@@ -68,13 +68,14 @@ const LoginPage = () => {
           />
           {errors.password?.message}
           <button type="submit" className="logar">
-            Logar
+            Login
           </button>
           <p>
-            Crie sua conta para saborear muitas delícias e matar a sua fome!
+            Create your account to taste lots of delights and satisfy your
+            hunger!
           </p>
           <button className="cadastrar" onClick={() => sendTo("/register")}>
-            Cadastrar
+            Register
           </button>
         </ContainerLogin>
       </MainContainerLoginPage>

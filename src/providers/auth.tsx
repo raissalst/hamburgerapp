@@ -31,9 +31,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   );
 
   const errorUserNotFound = () => {
-    toast.error(
-      "Usuário não encontrado. Confira seus dados e tente novamente."
-    );
+    toast.error("User not found. Check your data and try again.");
   };
 
   const signIn = (userData: UserLoginFormat, history: any) => {
@@ -52,15 +50,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   const notifyLogout = () =>
-    toast(
-      <span>
-        Você fez o logout! Para acessar o carrinho, faça seu login novamente.
-      </span>,
-      {
-        icon: "🛑",
-        id: "2",
-      }
-    );
+    toast(<span>You have logged out! To access your cart, login again.</span>, {
+      icon: "🛑",
+      id: "2",
+    });
 
   // Função para deslogar da aplicação
   const Logout = (history: any) => {

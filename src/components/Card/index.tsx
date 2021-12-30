@@ -22,9 +22,9 @@ export const Card = ({ item }: CardProps) => {
       </div>
       <h3>{name}</h3>
       <h5>{section}</h5>
-      <p>R$ {price.toFixed(2)}</p>
+      <p>$ {price.toFixed(2)}</p>
 
-      <button onClick={() => handleAdd(item)}>Adicionar</button>
+      <button onClick={() => handleAdd(item)}>Add</button>
     </ItemLiContainer>
   );
 };
