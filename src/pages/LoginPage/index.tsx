@@ -52,7 +52,7 @@ const LoginPage = () => {
               <img src={shoppingbag} alt="bag" />
             </div>
             <p>
-              Life is like a sandwich, it is better to fill her with the{" "}
+              Life is like a sandwich, it is better to fill it with the{" "}
               <span>best</span> ingredients.
             </p>
           </MessageCard>
