@@ -7,5 +7,5 @@
 </p>
 
 <p align = "justify">
-:dart: The main goal of this application was to practice TypeScript language as well as sorted libs and tools, such as Material UI, styled components, react-hook-form, react-hot-toast, among others.
+:dart: The main goal of this application was to practice TypeScript language as well as sorted libs and tools, such as Material UI, styled components, react-hook-form, react-hot-toast, among others. Also work on back end skills through the fake-API using JSON-Server (https://github.com/raissalst/hamburgerapi).
 </p>
