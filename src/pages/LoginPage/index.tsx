@@ -44,7 +44,7 @@ const LoginPage = () => {
         <TitleContainer>
           <Link to="/">
             <h1>
-              Burguer <span>Kenzie</span>
+              Burguer <span>Place</span>
             </h1>
           </Link>
           <MessageCard>
@@ -62,7 +62,7 @@ const LoginPage = () => {
           <input placeholder="Email" {...register("email")} />
           {errors.email?.message}
           <input
-            placeholder="Senha"
+            placeholder="Password"
             type="password"
             {...register("password")}
           />

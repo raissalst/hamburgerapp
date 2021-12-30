@@ -18,17 +18,17 @@ const RegisterPage = () => {
   const formSchema = yup.object().shape({
     name: yup
       .string()
-      .max(50, "Campo obrigatório. Máximo de 50 dígitos.")
-      .required("Campo obrigatório"),
-    email: yup.string().required("Campo obrigatório").email("E-mail inválido"),
+      .max(50, "Required field. Maximum of 50 digits.")
+      .required("Required field"),
+    email: yup.string().required("Required field").email("Invalid e-mail"),
     password: yup
       .string()
-      .min(6, "Campo obrigatório. Mínimo de 6 dígitos")
-      .required("Campo obrigatório. Senha deve ter no mínimo 6 caracteres."),
+      .min(6, "Required field. Minimum of 6 digits.")
+      .required("Required field. Password must have at least 6 characters."),
     password_confirm: yup
       .string()
-      .oneOf([yup.ref("password")], "Senhas diferentes")
-      .required("Campo obrigatório"),
+      .oneOf([yup.ref("password")], "Different passwords")
+      .required("Required field"),
   });
 
   const history = useHistory();
@@ -52,7 +52,7 @@ const RegisterPage = () => {
         <TitleContainer>
           <Link to="/">
             <h1>
-              Burguer <span>Kenzie</span>
+              Burguer <span>Place</span>
             </h1>
           </Link>
           <MessageCard>
@@ -60,34 +60,34 @@ const RegisterPage = () => {
               <img src={shoppingbag} alt="bag" />
             </div>
             <p>
-              A vida é como um sanduíche, é preciso recheá-la com os{" "}
-              <span>melhores</span> ingredientes.
+              Life is like a sandwich, it is better to fill her with the{" "}
+              <span>best</span> ingredients.
             </p>
           </MessageCard>
         </TitleContainer>
         <ContainerRegister onSubmit={handleSubmit(sendToRegisterHandling)}>
-          <h3>Cadastro</h3>
+          <h3>Register</h3>
           <Link className="linkToLogin" to="/login">
-            <p>Retornar para o login</p>
+            <p>Return to login</p>
           </Link>
 
-          <input placeholder="Nome" {...register("name")} />
+          <input placeholder="Name" {...register("name")} />
           {errors.name?.message}
           <input placeholder="Email" {...register("email")} />
           {errors.email?.message}
           <input
-            placeholder="Senha"
+            placeholder="Password"
             type="password"
             {...register("password")}
           />
           {errors.password?.message}
           <input
-            placeholder="Confirmar Senha"
+            placeholder="Cofnfirm your password"
             type="password"
             {...register("password_confirm")}
           />
           {errors.password_confirm?.message}
-          <button type="submit">Cadastrar</button>
+          <button type="submit">Register</button>
         </ContainerRegister>
       </MainContainerRegisterPage>
     </>

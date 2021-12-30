@@ -89,7 +89,7 @@ export const NavBar = () => {
       <AppBar className={classes.appbar} position="fixed">
         <Toolbar className={classes.toolbar}>
           <MenuItem className={classes.title} onClick={() => sendTo("/")}>
-            Burguer<span className={classes.span}>Kenzie</span>
+            Burguer<span className={classes.span}>Place</span>
           </MenuItem>
           <MenuItem
             className={classes.itemlogin}
