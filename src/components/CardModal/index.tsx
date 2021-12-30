@@ -21,14 +21,14 @@ export const CardModal = () => {
   return (
     <CardModalContainer>
       <GreenTopBar>
-        <h2>Carrinho de compras</h2>
+        <h2>Shopping cart</h2>
       </GreenTopBar>
       <CartInformation>
         {cart.length === 0 && (
           <>
-            <h4>Sua sacola está vazia</h4>
+            <h4>Your bag is empty</h4>
 
-            <h6>Adicione itens</h6>
+            <h6>Add items</h6>
           </>
         )}
 
@@ -68,15 +68,13 @@ export const CardModal = () => {
             <TotalCartInfo>
               <p className="total">Total</p>
               <p className="totalNumber">
-                R${" "}
+                ${" "}
                 {cart
                   .reduce((acc, item) => acc + item.price * item.quantity, 0)
                   .toFixed(2)}
               </p>
             </TotalCartInfo>
-            <button onClick={() => deleteAllItemsInCart()}>
-              Remover Todos
-            </button>
+            <button onClick={() => deleteAllItemsInCart()}>Remove all</button>
           </>
         )}
       </CartInformation>
