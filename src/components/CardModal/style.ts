@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const CardModalContainer = styled.div`
-  /* position: relative; */
-
   width: 375px;
   min-height: 212px;
   max-height: 500px;

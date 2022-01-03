@@ -1,5 +1,4 @@
 import { createContext, useContext, ReactNode } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { UserRegisterFormat } from "../interfaces/interfaces";
 
@@ -18,10 +17,8 @@ const RegisterContext = createContext<RegisterProviderData>(
 );
 
 export const RegisterProvider = ({ children }: RegisterProviderProps) => {
-  const history = useHistory();
-
   const handleRegister = (userData: UserRegisterFormat, history: any) => {
-    const { email, password, name, password_confirm } = userData;
+    const { email, password, name } = userData;
     axios
       .post("https://hamburgerapprlst.herokuapp.com/register", {
         email: email,

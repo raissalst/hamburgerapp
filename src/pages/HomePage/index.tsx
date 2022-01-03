@@ -4,21 +4,28 @@ import { ListContainerHome, MainContainerHome } from "./style";
 import { MenuItemFormat } from "../../interfaces/interfaces";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useCart } from "../../providers/cart";
+import { useAuth } from "../../providers/auth";
 
 const HomePage = () => {
   const [menuList, setMenuList] = useState<MenuItemFormat[]>(
     [] as MenuItemFormat[]
   );
 
+  const { getItemsInCart, setCart } = useCart();
+
+  const { authToken, userId } = useAuth();
+
   useEffect(() => {
     axios
       .get("https://hamburgerapprlst.herokuapp.com/menulist")
       .then((response) => {
         setMenuList([...response.data]);
-        // console.log(response);
+        userId && authToken && getItemsInCart(userId, authToken);
+        userId === "" && setCart([]);
       })
-      .catch(() => console.log("erro"));
-  }, []);
+      .catch((e) => console.log(e.response.data.message));
+  }, [userId]);
 
   return (
     <>

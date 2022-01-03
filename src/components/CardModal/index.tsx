@@ -8,6 +8,7 @@ import {
 import { FaTrash } from "react-icons/fa";
 import { useCart } from "../../providers/cart";
 import shoppingbag from "../../assets/shopping-bag.png";
+import { useAuth } from "../../providers/auth";
 
 export const CardModal = () => {
   const {
@@ -17,7 +18,8 @@ export const CardModal = () => {
     deleteAllItemsInCart,
   } = useCart();
 
-  // console.log("cart no card modal", cart);
+  const { userId } = useAuth();
+
   return (
     <CardModalContainer>
       <GreenTopBar>
@@ -33,6 +35,7 @@ export const CardModal = () => {
         )}
 
         {cart.length !== 0 &&
+          userId !== "" &&
           cart.map((item) => (
             <CardItemChosen key={item.name}>
               <div className="containerItemImage">
