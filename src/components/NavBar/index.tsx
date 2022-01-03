@@ -76,13 +76,12 @@ export const NavBar = () => {
     setOpen(false);
   };
 
-  const { Logout } = useAuth();
+  const { Logout, userId } = useAuth();
+  const { cart } = useCart();
 
   const handleSubmitLogin = () => {
     Logout(history);
   };
-
-  const { cart } = useCart();
 
   return (
     <>
@@ -110,12 +109,14 @@ export const NavBar = () => {
               <FaShoppingCart />
             </Badge>
           </MenuItem>
-          <MenuItem
-            className={classes.itemlogout}
-            onClick={() => handleSubmitLogin()}
-          >
-            <MdLogout />
-          </MenuItem>
+          {userId && (
+            <MenuItem
+              className={classes.itemlogout}
+              onClick={() => handleSubmitLogin()}
+            >
+              <MdLogout />
+            </MenuItem>
+          )}
         </Toolbar>
       </AppBar>
       <Modal open={open} onClose={handleClickCloseDescrip}>

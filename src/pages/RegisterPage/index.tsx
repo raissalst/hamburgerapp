@@ -42,7 +42,6 @@ const RegisterPage = () => {
   const { handleRegister } = useRegister();
 
   const sendToRegisterHandling = (data: UserRegisterFormat) => {
-    // console.log(data);
     handleRegister(data, history);
   };
 
@@ -82,7 +81,7 @@ const RegisterPage = () => {
           />
           {errors.password?.message}
           <input
-            placeholder="Cofnfirm your password"
+            placeholder="Confirm your password"
             type="password"
             {...register("password_confirm")}
           />

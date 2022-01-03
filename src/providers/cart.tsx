@@ -12,6 +12,7 @@ interface CartProviderProps {
 //tipa o que vai ser exportado pelo context
 interface CartProviderData {
   cart: GetCartFormat[];
+  setCart: (cart: GetCartFormat[]) => void;
   handleAddToCart: (data: MenuItemFormat) => void;
   handleQuantitiesItemInCart: (
     id: number,
@@ -21,13 +22,12 @@ interface CartProviderData {
   deleteItemInCart: (id: number) => void;
   deleteAllItemsInCart: () => void;
   getItemsInCart: (id: string, token: string) => void;
+  testingSetDeleting: () => void;
 }
 
 const CartContext = createContext<CartProviderData>({} as CartProviderData);
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-  //   const history = useHistory();
-
   const { userId, authToken } = useAuth();
   const [cart, setCart] = useState<GetCartFormat[]>([] as GetCartFormat[]);
 
@@ -114,7 +114,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
           }
         )
         .then((response) => {
-          //console.log(response.data);
           getItemsInCart(userId, authToken);
         })
         .catch((e) => console.log(e.response.data.message));
@@ -128,7 +127,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((response) => {
-        //console.log(response.data);
         getItemsInCart(userId, authToken);
       })
       .catch((e) => console.log(e.response.data.message));
@@ -139,15 +137,21 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     cart.map((item) => deleteItemInCart(item.id));
   };
 
+  const testingSetDeleting = () => {
+    setCart([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
         cart,
+        setCart,
         handleAddToCart,
         handleQuantitiesItemInCart,
         deleteItemInCart,
         deleteAllItemsInCart,
         getItemsInCart,
+        testingSetDeleting,
       }}
     >
       {children}

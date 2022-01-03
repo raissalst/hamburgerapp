@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { UserLoginFormat } from "../interfaces/interfaces";
 import toast from "react-hot-toast";
@@ -20,8 +19,6 @@ interface AuthProviderData {
 const AuthContext = createContext<AuthProviderData>({} as AuthProviderData);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const history = useHistory();
-
   const [authToken, setAuthToken] = useState(
     () => localStorage.getItem("token") || ""
   );
@@ -65,8 +62,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     history.push("/login");
     notifyLogout();
   };
-
-  //   console.log("user id no auth", userId);
 
   return (
     <AuthContext.Provider value={{ authToken, userId, Logout, signIn }}>
