@@ -33,7 +33,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const getItemsInCart = (id: string, token: string) => {
     axios
-      .get(`https://hamburgerapprlst.herokuapp.com/cart?userId=${id}`, {
+      .get(`https://hamburgerapi.onrender.com/cart?userId=${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setCart(response.data))
@@ -65,7 +65,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     if (cart.length === 0 || isItemAlreadyAdded === false) {
       return axios
         .post(
-          `https://hamburgerapprlst.herokuapp.com/cart`,
+          `https://hamburgerapi.onrender.com/cart`,
           {
             name: name,
             price: price,
@@ -104,7 +104,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     } else {
       return axios
         .patch(
-          `https://hamburgerapprlst.herokuapp.com/cart/${id}`,
+          `https://hamburgerapi.onrender.com/cart/${id}`,
           {
             quantity: newQuantity,
             userId: userId,
@@ -123,7 +123,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   //deletando 1 item do carrinho
   const deleteItemInCart = (id: number) => {
     axios
-      .delete(`https://hamburgerapprlst.herokuapp.com/cart/${id}`, {
+      .delete(`https://hamburgerapi.onrender.com/cart/${id}`, {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((response) => {

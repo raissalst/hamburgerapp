@@ -18,7 +18,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://hamburgerapprlst.herokuapp.com/menulist")
+      .get("https://hamburgerapi.onrender.com/menulist")
       .then((response) => {
         setMenuList([...response.data]);
         userId && authToken && getItemsInCart(userId, authToken);
